@@ -51,7 +51,7 @@ class BlockChain(object):
             transaction
         """
 
-        self.current_transaction.append({
+        self.current_transactions.append({
             'sender': sender,
             'recipient': recipient,
             'amount': amount,
