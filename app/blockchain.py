@@ -72,10 +72,8 @@ class BlockChain(object):
         :return: <int>
         """
 
-        logger.debug('Do proof of work')
         proof = 0
         while self.valid_proof(last_proof, proof) is False:
-            logger.debug(proof)
             proof += 1
 
         return proof
@@ -91,9 +89,7 @@ class BlockChain(object):
         """
 
         guess = '{}{}'.format(last_proof, proof).encode()
-        logger.info(guess)
         guess_hash = hashlib.sha256(guess).hexdigest()
-        logger.info(guess_hash)
         return guess_hash[:4] == "0000"
 
     @staticmethod

@@ -1,3 +1,4 @@
+import logging
 import uuid
 
 import tornado.ioloop
@@ -5,6 +6,9 @@ import tornado.web
 import tornado.escape
 
 from blockchain import BlockChain
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 blockchain = BlockChain()
 node_identifier = str(uuid.uuid4()).replace('-', '')
@@ -59,6 +63,7 @@ class ChainHandler(tornado.web.RequestHandler):
         self.write(tornado.escape.json_encode(blockchain.chain))
 
 if __name__ == "__main__":
+    
     application = tornado.web.Application([
         (r"/transaction", TransactionHandler),
         (r"/mine", MineHandler),
@@ -66,4 +71,5 @@ if __name__ == "__main__":
     ])
 
     application.listen(8888)
+    logger.info("App running on 8888") 
     tornado.ioloop.IOLoop.current().start()
