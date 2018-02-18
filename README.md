@@ -21,5 +21,5 @@ There are no tests =( but you can run flake8
 
 
 ## Sources
-https://hackernoon.com/learn-blockchains-by-building-one-117428612f46\
-https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
+- https://hackernoon.com/learn-blockchains-by-building-one-117428612f46
+- https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
